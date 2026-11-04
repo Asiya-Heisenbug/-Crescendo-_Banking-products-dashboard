@@ -214,6 +214,38 @@ body {
     color: var(--grey);
 }
 
+.settings-section {
+    max-width: 500px;
+}
+
+.settings-form {
+    margin-top: 20px;
+}
+
+.settings-form label {
+    display: block;
+    margin-top: 15px;
+    margin-bottom: 5px;
+}
+
+.settings-form input[type="text"],
+.settings-form input[type="email"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+}
+
+.settings-form .checkbox-label {
+    margin-bottom: 18px;
+}
+
+.settings-section[hidden],
+.summary-section[hidden],
+.products-section[hidden] {
+    display: none;
+}
+
 @media (max-width: 900px) {
     .products-grid {
         grid-template-columns: repeat(2, 1fr);

@@ -3,6 +3,9 @@ var selectedCategory = "All";
 var productList = document.getElementById("products-grid");
 var searchInput = document.getElementById("product-search");
 var filterButtons = document.getElementById("category-filters");
+var overviewLink = document.getElementById("overview-link");
+var settingsLink = document.getElementById("settings-link");
+var settingsSection = document.getElementById("settings-section");
 
 var activeCount = 0;
 var pendingCount = 0;
@@ -19,6 +22,29 @@ for (var i = 0; i < products.length; i++) {
 document.getElementById("total-products").textContent = products.length;
 document.getElementById("active-products").textContent = activeCount;
 document.getElementById("pending-products").textContent = pendingCount;
+
+overviewLink.addEventListener("click", function (event) {
+    event.preventDefault();
+    settingsSection.hidden = true;
+    document.querySelector(".summary-section").hidden = false;
+    document.getElementById("products").hidden = false;
+    overviewLink.classList.add("active");
+    settingsLink.classList.remove("active");
+});
+
+settingsLink.addEventListener("click", function (event) {
+    event.preventDefault();
+    settingsSection.hidden = false;
+    document.querySelector(".summary-section").hidden = true;
+    document.getElementById("products").hidden = true;
+    settingsLink.classList.add("active");
+    overviewLink.classList.remove("active");
+});
+
+document.getElementById("settings-form").addEventListener("submit", function (event) {
+    event.preventDefault();
+    alert("Settings saved");
+});
 
 function showProducts() {
     var searchText = searchInput.value.toLowerCase();

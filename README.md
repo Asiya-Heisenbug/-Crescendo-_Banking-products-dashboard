@@ -4,9 +4,9 @@ This is a simple banking products dashboard made with HTML, CSS and JavaScript.
 
 ## How to Run
 
-Open `index.html` in VS Code and use Live Server.
 
-## Features
+https://asiya-heisenbug.github.io/-Crescendo-_Banking-products-dashboard
+
 
 - View banking products
 - Search products

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="BankFlow banking dashboard">
+    <title>BankFlow Dashboard</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="app-shell">
+        <aside class="sidebar">
+            <a class="brand" href="#">BankFlow</a>
+            <nav class="navigation" aria-label="Primary navigation">
+                <a class="nav-item active" href="#" aria-current="page">Overview</a>
+                <a class="nav-item" href="#products">My Products</a>
+                <a class="nav-item" href="#">Settings</a>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+            <header class="top-header">
+                <div>
+                    <h1>Good morning, Alex</h1>
+                    <p>Here's your financial overview.</p>
+                </div>
+                <div class="header-actions">
+                    <label class="search-box" for="product-search">
+                        <span aria-hidden="true">⌕</span>
+                        <input id="product-search" type="search" placeholder="Search products">
+                    </label>
+                    <span class="header-avatar">AK</span>
+                </div>
+            </header>
+
+            <section class="summary-section">
+                <div class="summary-grid">
+                    <article class="summary-card">
+                        <div><p>Total Products</p><strong id="total-products">0</strong></div>
+                    </article>
+                    <article class="summary-card">
+                        <div><p>Active Products</p><strong id="active-products">0</strong></div>
+                    </article>
+                    <article class="summary-card">
+                        <div><p>Pending Applications</p><strong id="pending-products">0</strong></div>
+                    </article>
+                </div>
+            </section>
+
+            <section class="products-section" id="products">
+                <div class="products-heading">
+                    <div>
+                        <h2>Your Products</h2>
+                        <p>Manage your accounts, cards, loans and investments.</p>
+                    </div>
+                </div>
+                <div class="filter-row" id="category-filters" aria-label="Filter products by category">
+                    <button class="filter-button active" type="button" data-category="All">All</button>
+                    <button class="filter-button" type="button" data-category="Savings">Savings</button>
+                    <button class="filter-button" type="button" data-category="Cards">Cards</button>
+                    <button class="filter-button" type="button" data-category="Loans">Loans</button>
+                    <button class="filter-button" type="button" data-category="Wealth">Wealth</button>
+                </div>
+                <div class="products-grid" id="products-grid"></div>
+            </section>
+        </main>
+    </div>
+
+    <script src="js/data.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>

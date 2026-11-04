@@ -1,0 +1,259 @@
+:root {
+    --background: #FAF9F4;
+    --white: white;
+    --yellow: #F5E6A8;
+    --text: #292820;
+    --grey: #89877D;
+}
+
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: var(--background);
+    color: var(--text);
+}
+
+.app-shell {
+    display: flex;
+    min-height: 100vh;
+}
+
+.sidebar {
+    width: 200px;
+    padding: 25px 18px;
+    background: var(--white);
+    border-right: 1px solid #ddd;
+}
+
+.brand {
+    display: block;
+    margin-bottom: 25px;
+    color: var(--text);
+    font-size: 21px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.nav-item {
+    display: block;
+    padding: 10px;
+    margin-bottom: 5px;
+    color: var(--grey);
+    text-decoration: none;
+}
+
+.nav-item.active {
+    border-radius: 6px;
+    background: var(--yellow);
+    color: var(--text);
+}
+
+.main-content {
+    flex: 1;
+    padding: 30px;
+}
+
+.top-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.top-header p,
+.products-heading p {
+    margin-top: 5px;
+    color: var(--grey);
+}
+
+.search-box {
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    background: var(--white);
+}
+
+.search-box input {
+    border: 0;
+    outline: none;
+}
+
+.header-avatar {
+    margin-left: 10px;
+    padding: 10px 8px;
+    border-radius: 50%;
+    background: var(--yellow);
+}
+
+.summary-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+}
+
+.summary-card,
+.product-card {
+    padding: 18px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    background: var(--white);
+}
+
+.summary-card p {
+    margin-bottom: 8px;
+    color: var(--grey);
+}
+
+.summary-card strong {
+    font-size: 24px;
+}
+
+.products-section {
+    margin-top: 30px;
+}
+
+.filter-row {
+    margin: 18px 0;
+}
+
+.filter-button {
+    padding: 8px 14px;
+    margin-right: 4px;
+    border: 1px solid #ddd;
+    border-radius: 18px;
+    background: var(--white);
+    color: var(--grey);
+}
+
+.filter-button.active {
+    background: var(--text);
+    color: white;
+}
+
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+}
+
+.product-card-header {
+    text-align: right;
+}
+
+.status-badge {
+    padding: 4px 8px;
+    border-radius: 12px;
+    font-size: 12px;
+}
+
+.active {
+    background: #eaf3e6;
+    color: #4b7547;
+}
+
+.pending {
+    background: #fff1cc;
+    color: #96701b;
+}
+
+.product-category {
+    margin-top: 12px;
+    color: var(--grey);
+    font-size: 12px;
+}
+
+.product-card h3 {
+    margin: 5px 0 15px;
+}
+
+.product-metrics {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    padding-top: 12px;
+    margin-bottom: 15px;
+    border-top: 1px solid #ddd;
+}
+
+.metric span {
+    display: block;
+    color: var(--grey);
+    font-size: 12px;
+}
+
+.product-card button {
+    width: 100%;
+    padding: 9px;
+    border-radius: 6px;
+}
+
+.primary-button {
+    border: 1px solid var(--text);
+    background: var(--text);
+    color: white;
+}
+
+.secondary-button {
+    border: 1px solid #c49a24;
+    background: var(--yellow);
+}
+
+.empty-state {
+    grid-column: 1 / -1;
+    padding: 35px;
+    border: 1px dashed #ddd;
+    text-align: center;
+}
+
+.empty-state p {
+    margin-top: 8px;
+    color: var(--grey);
+}
+
+@media (max-width: 900px) {
+    .products-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 700px) {
+    .app-shell {
+        display: block;
+    }
+
+    .sidebar {
+        width: 100%;
+        border-right: 0;
+        border-bottom: 1px solid #ddd;
+    }
+
+    .nav-item {
+        display: inline-block;
+    }
+
+    .main-content {
+        padding: 20px;
+    }
+
+    .top-header {
+        display: block;
+    }
+
+    .search-box {
+        display: inline-block;
+        margin-top: 15px;
+    }
+
+    .header-avatar {
+        display: none;
+    }
+
+    .summary-grid,
+    .products-grid {
+        grid-template-columns: 1fr;
+    }
+}

@@ -6,6 +6,8 @@ var filterButtons = document.getElementById("category-filters");
 var overviewLink = document.getElementById("overview-link");
 var settingsLink = document.getElementById("settings-link");
 var settingsSection = document.getElementById("settings-section");
+var detailsBox = document.getElementById("details-box");
+var detailsContent = document.getElementById("details-content");
 
 var activeCount = 0;
 var pendingCount = 0;
@@ -109,11 +111,21 @@ productList.addEventListener("click", function (event) {
                 if (products[i].status == "Pending") {
                     alert("Application submitted for " + products[i].name);
                 } else {
-                    alert(products[i].name + " details opened");
+                    detailsContent.innerHTML =
+                        "<h2>" + products[i].name + "</h2>" +
+                        "<p><strong>Category:</strong> " + products[i].category + "</p>" +
+                        "<p><strong>Status:</strong> " + products[i].status + "</p>" +
+                        "<p><strong>" + products[i].metrics[0].label + ":</strong> " + products[i].metrics[0].value + "</p>" +
+                        "<p><strong>" + products[i].metrics[1].label + ":</strong> " + products[i].metrics[1].value + "</p>";
+                    detailsBox.hidden = false;
                 }
             }
         }
     }
+});
+
+document.getElementById("close-details").addEventListener("click", function () {
+    detailsBox.hidden = true;
 });
 
 showProducts();

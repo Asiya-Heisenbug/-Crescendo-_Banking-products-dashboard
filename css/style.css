@@ -246,6 +246,38 @@ body {
     display: none;
 }
 
+.details-box {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    width: 320px;
+    max-width: calc(100% - 40px);
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    background: var(--white);
+}
+
+.details-box[hidden] {
+    display: none;
+}
+
+.details-box h2 {
+    margin-bottom: 12px;
+}
+
+.details-box p {
+    margin-bottom: 8px;
+}
+
+.close-details {
+    float: right;
+    padding: 4px 8px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background: var(--white);
+}
+
 @media (max-width: 900px) {
     .products-grid {
         grid-template-columns: repeat(2, 1fr);
